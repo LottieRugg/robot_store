@@ -18,13 +18,12 @@ const getDb = async () => {
 const successMessage = 'The database request was successful'
 
 const responseFormat =  (status, message, data) => {
-    const formattedResponse =
-        {
+    return {
             "status": status,
             "message": message,
             "data": data
         }
-        return formattedResponse
+
 }
 
 app.get('/products', async (req,res) => {
@@ -35,13 +34,21 @@ app.get('/products', async (req,res) => {
 })
 
 app.get('/products/:id', async (req, res) => {
-    const connection = await getDb()
     const userId = req.params.id
-    const itemById = await connection.query('SELECT `id`, `title`, `price`, `image`, `category_id`, `category` ' +
-        '`character_id`, `character`, `description`, `image2`, `image3` FROM `products` WHERE `id` = ' + userId
-    )
+    if ( !Number.isInteger(parseInt(userId))){
+        res.json(responseFormat(400, 'please check the id entered'))
+    } else {
+        const connection = await getDb()
+        const itemById = await connection.query('SELECT `id`, `title`, `price`, `image`, `category_id`, `category` ' +
+            '`character_id`, `character`, `description`, `image2`, `image3` FROM `products` WHERE `id` = ? ', [userId]
+        )
+        if (itemById.length==0){
+            res.json(responseFormat(400,'There is no item matching that ID, please try again'))
+        } else {
+            res.json(responseFormat(200, successMessage, itemById[0]))
+        }
+    }
 
-    res.json(responseFormat(200, successMessage, itemById))
 })
 
 app.listen(port)

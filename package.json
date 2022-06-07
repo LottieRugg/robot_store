@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/LottieRugg/robot_store#readme",
   "dependencies": {
+    "express": "^4.18.1",
     "promise-mysql": "^5.2.0"
   }
 }
