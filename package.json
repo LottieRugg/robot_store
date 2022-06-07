@@ -1,0 +1,23 @@
+{
+  "name": "robot_store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LottieRugg/robot_store.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LottieRugg/robot_store/issues"
+  },
+  "homepage": "https://github.com/LottieRugg/robot_store#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "promise-mysql": "^5.2.0"
+  }
+}
