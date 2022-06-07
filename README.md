@@ -1,12 +1,12 @@
 # robot_store
 
-## Robot-Store API
+Robot-Store API
 ----
-GET all product info from the API
+## GET all product info from the API
 
 ### URL
 
-  /products
+/products
  
 ### Method:
  `GET`
@@ -48,17 +48,68 @@ There are no required or optional params.
 ```
  
 
-* **Error Response:**
+## Error response
+Code: 404 <br />
+Content:
+    
+  
+        {
+        "status": 404,
+        "message": "Oh no! The page you were looking for has not been found!"
+        }
+  
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+## GET single product using given ID from the API
 
-    * **Code:** 401 UNAUTHORIZED <br />
-      **Content:** `{ error : "Log in" }`
+### URL
+/restaurants/{id}
 
-  OR
+### Method 
+`GET`
 
-    * **Code:** 422 UNPROCESSABLE ENTRY <br />
-      **Content:** `{ error : "Email Invalid" }`
+### URL Params 
+#### Required:
+`id`
+
+#### Optional:
+There are no optional params
+
+#### Example 
+`/products/6`
+
+### Success Response:
+
+Code: 200 <br />
+Content:
+  ```
+    {
+        {
+        "status": 200,
+        "message": "The database request was successful",
+        "data": {
+            "id": 6,
+            "title": "I Compute, Therefore I Am Baseball Hat",
+            "price": 29,
+            "image": "https://binaryville.com/images/products/dolores-compute-baseballhat-black.jpg",
+            "category_id": 2,
+            "character_id": "Baseball Hats",
+            "character": "Dolores",
+            "description": "Cheer the team on in style with our unstructured, low crown, six-panel baseball cap made of 100% organic cotton twill. Featuring our original Binaryville artwork, screen-printed with PVC- and phthalate-free inks. Complete with matching, sewn eyelets, and adjustable fabric closure. ",
+            "image2": "https://binaryville.com/images/products/dolores-compute-baseballhat-gray.jpg",
+            "image3": null
+       }
+    }
+
+```
+### Error response:
+code: 400 <br/>
+content:
+````
+{
+    "status": 400,
+    "message": "There is no item matching that ID, please try again"
+}
+````
 
 * **Sample Call:**
 

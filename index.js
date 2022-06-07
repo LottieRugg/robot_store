@@ -51,4 +51,7 @@ app.get('/products/:id', async (req, res) => {
 
 })
 
+app.get('*', (req, res)=>{
+    res.json(responseFormat(404, 'Oh no! The page you were looking for has not been found!'))
+})
 app.listen(port)
