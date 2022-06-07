@@ -1,50 +1,49 @@
 # robot_store
 
-**Robot-Store API**
+## Robot-Store API
 ----
 GET all product info from the API
 
-* **URL**
+### URL
 
   /products
-
-* **Method:**
-* 
+ 
+### Method:
  `GET`
 
-* **URL Params**
+### URL Params
 There are no required or optional params.
 
-* **Success Response:**
+### Success Response:
 
-    * **Code:** 200 <br />
-      **Content:** 
+   Code: 200 <br />
+   Content:
   ```
-      {
+    {
       "status": 200,
       "message": "The database request was successful",
       "data": [
-      {
-      "id": 1,
-      "image": "https://binaryville.com/images/products/fred-0s1s-apron-black.jpg",
-      "title": "It's All 0's and 1's to Me! Apron",
-      "price": 24
-      },
-      {
-      "id": 2,
-      "image": "https://binaryville.com/images/products/dolores-compute-apron-black.jpg",
-      "title": "I Compute, Therefore I Am Apron",
-      "price": 24
-      },
-      {
-      "id": 3,
-      "image": "https://binaryville.com/images/products/bubbles-gumball-apron-black.jpg",
-      "title": "A Gumball for Your Thoughts Apron",
-      "price": 24
-      }
-   } 
-  ]
-}
+        {
+          "id": 1,
+          "image": "https://binaryville.com/images/products/fred-0s1s-apron-black.jpg",
+          "title": "It's All 0's and 1's to Me! Apron",
+          "price": 24
+        },
+        {
+          "id": 2,
+          "image": "https://binaryville.com/images/products/dolores-compute-apron-black.jpg",
+          "title": "I Compute, Therefore I Am Apron",
+          "price": 24
+        },
+        {
+          "id": 3,
+          "image": "https://binaryville.com/images/products/bubbles-gumball-apron-black.jpg",
+          "title": "A Gumball for Your Thoughts Apron",
+          "price": 24
+        }
+      } 
+    ]
+  }
 
 ```
  
